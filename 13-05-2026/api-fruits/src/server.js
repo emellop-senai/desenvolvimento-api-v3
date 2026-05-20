@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { fruitsRouter } from './routes/fruits.routes.js'
 import { legumesRoute } from './routes/legumes.routes.js'
 
@@ -6,6 +7,7 @@ import { legumesRoute } from './routes/legumes.routes.js'
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 const PORT = 3000
 
 app.get("/", (req, res) => {
