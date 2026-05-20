@@ -8,3 +8,12 @@ legumesRoute.get("/", async (req, res) => {
 
     res.json(legumes)
 })
+
+legumesRoute.get("/:id", async (req, res) => {
+    const { id } = req.params
+    console.log(id);
+
+    const legume = await legumesService.getById(id)
+
+    res.json(legume)
+})
